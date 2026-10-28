@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerRec2021 - A 2021 Revival</title>
+    <style>
+        .nav-tab {
+            color: #cccccc;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+        }
+        .nav-tab:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dl-btn {
+            background: transparent;
+            border: 2px solid #ffcc00;
+            color: #ffcc00;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .dl-btn:hover {
+            background: #ffcc00;
+            color: #121212;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+        }
+    </style>
+</head>
+<body id="themeBody" style="background-color: #121212; color: #ffffff; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease;">
+
+    <!-- Navigation Header Bar -->
+    <header id="themeHeader" style="background-color: #1a1a1a; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #e2725b; position: sticky; top: 0; z-index: 100; transition: background-color 0.3s ease;">
+        <div style="display: flex; align-items: center; font-size: 22px; font-weight: bold; color: inherit; gap: 12px;">
+            <img src="icon.png" onerror="this.onerror=function(){this.src='icon.png.png';this.onerror=null;};this.src='icon.PNG';" alt="🍔" style="height: 38px; width: auto; object-fit: contain; border-radius: 4px; display: inline-block; vertical-align: middle;"> 
+            <span id="logoText" style="vertical-align: middle; color: #ffffff;">BurgerRec2021</span>
+        </div>
+
+        <nav style="position: relative;">
+            <ul style="display: flex; list-style: none; gap: 15px; margin: 0; padding: 0; align-items: center;">
+                <li><span onclick="alert('Opening Custom Room Directories...')" class="nav-tab">Rooms</span></li>
+                <li><span onclick="alert('Opening Community Event Listings...')" class="nav-tab">Events</span></li>
+                <li><span onclick="toggleSettingsMenu(event)" class="nav-tab" style="position: relative;">Settings</span></li>
+                <li><span onclick="alert('Opening Server Admin Login Dashboard...')" class="nav-tab">Login</span></li>
+            </ul>
+
+            <!-- Settings Menu Dropdown Container -->
+            <div id="settingsMenu" style="display: none; position: absolute; top: 45px; right: 10px; background-color: #242424; border: 1px solid #3a3a3a; border-radius: 8px; padding: 10px; width: 180px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); z-index: 101;">
+                <p style="margin: 0 0 8px 5px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: bold;">Select Theme:</p>
+                <button onclick="changeTheme('dark')" style="width: 100%; text-align: left; padding: 8px; margin-bottom: 4px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 4px; cursor: pointer; font-weight: 600;">Dark Mode</button>
+                <button onclick="changeTheme('black')" style="width: 100%; text-align: left; padding: 8px; margin-bottom: 4px; background: #000000; border: 1px solid #222; color: #fff; border-radius: 4px; cursor: pointer; font-weight: 600;">Midnight Black</button>
+                <button onclick="changeTheme('white')" style="width: 100%; text-align: left; padding: 8px; background: #ffffff; border: 1px solid #ddd; color: #333; border-radius: 4px; cursor: pointer; font-weight: 600;">Light White</button>
+            </div>
+        </nav>
+        <button onclick="alert('Starting Client Installer Download Link...')" class="dl-btn">Download</button>
+    </header>
+    <!-- Main Banner Section Layout Area -->
+    <section id="heroSection" style="background: linear-gradient(to bottom, #4a2306, #121212); padding: 90px 20px; text-align: center; border-bottom: 1px solid #2a2a2a; transition: background 0.3s ease;">
+        <h1 style="font-size: 46px; margin: 0 0 15px 0; letter-spacing: 1px; font-weight: bold; color: inherit;">Welcome To BurgerRec A 2021 Revival</h1>
+        <p style="color: #aaaaaa; font-size: 19px; margin: 0 0 35px 0;">Experience the ultimate classic server revival project with your friends.</p>
+        <button onclick="alert('Fetching latest client update zip file...')" style="background-color: #e2725b; color: white; border: none; padding: 16px 45px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 15px rgba(226, 114, 91, 0.4); transition: transform 0.1s ease;">Download</button>
+    </section>
+
+    <!-- Info Panels Grid Container -->
+    <main style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 60px;">
+            
+            <div class="info-card" style="background-color: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #2a2a2a; transition: background-color 0.3s ease, border-color 0.3s ease;">
+                <div style="height: 160px; background: linear-gradient(135deg, #e2725b, #4a2306); display: flex; align-items: center; justify-content: center; font-size: 50px;">🌐</div>
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 16px; text-transform: uppercase; color: #ffcc00; margin: 0 0 8px 0; letter-spacing: 0.5px;">Cross-Platform</h3>
+                    <p class="card-text" style="color: #bbbbbb; font-size: 13px; line-height: 1.5; margin: 0;">Play with or without a VR headset. Hang out with players from all across the world across server nodes!</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="background-color: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #2a2a2a; transition: background-color 0.3s ease, border-color 0.3s ease;">
+                <div style="height: 160px; background: linear-gradient(135deg, #ffcc00, #8b4513); display: flex; align-items: center; justify-content: center; font-size: 50px;">🛠️</div>
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 16px; text-transform: uppercase; color: #ffcc00; margin: 0 0 8px 0; letter-spacing: 0.5px;">Create Room</h3>
+                    <p class="card-text" style="color: #bbbbbb; font-size: 13px; line-height: 1.5; margin: 0;">Build your own rooms with fully restored vintage code tools. Custom burger inventions added daily!</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="background-color: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #2a2a2a; transition: background-color 0.3s ease, border-color 0.3s ease;">
+                <div style="height: 160px; background: linear-gradient(135deg, #4caf50, #1e4620); display: flex; align-items: center; justify-content: center; font-size: 50px;">🏆</div>
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 16px; text-transform: uppercase; color: #ffcc00; margin: 0 0 8px 0; letter-spacing: 0.5px;">Compete</h3>
+                    <p class="card-text" style="color: #bbbbbb; font-size: 13px; line-height: 1.5; margin: 0;">Grab a paintball gun and jump right into intense Capture the Flag matches. Action packed custom ranks!</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="background-color: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #2a2a2a; transition: background-color 0.3s ease, border-color 0.3s ease;">
+                <div style="height: 160px; background: linear-gradient(135deg, #2196f3, #0d47a1); display: flex; align-items: center; justify-content: center; font-size: 50px;">⚔️</div>
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 16px; text-transform: uppercase; color: #ffcc00; margin: 0 0 8px 0; letter-spacing: 0.5px;">Cooperate</h3>
+                    <p class="card-text" style="color: #bbbbbb; font-size: 13px; line-height: 1.5; margin: 0;">Team up with room party members to conquer old-school custom quests and earn high-tier cosmetics.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 style="border-bottom: 2px solid #2a2a2a; padding-bottom: 10px; margin: 0 0 20px 0; font-size: 20px; color: inherit; text-transform: uppercase; letter-spacing: 0.5px;">Featured Rooms</h2>
+        <div id="roomBox" style="background-color: #1a1a1a; padding: 30px; border-radius: 8px; color: #888888; text-align: center; font-style: italic; border: 1px solid #2a2a2a; transition: background-color 0.3s ease, border-color 0.3s ease;">
+            No rooms listed yet. Build maps and link them right here inside your custom scripts!
+        </div>
+    </main>
+    <script>
+        function toggleSettingsMenu(event) {
+            if (event) event.stopPropagation();
+            const menu = document.getElementById('settingsMenu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('settingsMenu');
+            if (menu && menu.style.display === 'block') {
+                if (!e.target.classList.contains('nav-tab')) {
+                    menu.style.display = 'none';
+                }
+            }
+        });
+
+        function changeTheme(mode) {
+            const body = document.getElementById('themeBody');
+            const header = document.getElementById('themeHeader');
+            const hero = document.getElementById('heroSection');
+            const cards = document.querySelectorAll('.info-card');
+            const cardTexts = document.querySelectorAll('.card-text');
+            const roomBox = document.getElementById('roomBox');
+            const menu = document.getElementById('settingsMenu');
+            const logoText = document.getElementById('logoText');
+
+            if (mode === 'dark') {
+                body.style.backgroundColor = '#121212';
+                body.style.color = '#ffffff';
+                header.style.backgroundColor = '#1a1a1a';
+                hero.style.background = 'linear-gradient(to bottom, #4a2306, #121212)';
+                roomBox.style.backgroundColor = '#1a1a1a';
+                roomBox.style.borderColor = '#2a2a2a';
+                menu.style.backgroundColor = '#242424';
+                logoText.style.color = '#ffffff';
+                cards.forEach(c => { c.style.backgroundColor = '#1a1a1a'; c.style.borderColor = '#2a2a2a'; });
+                cardTexts.forEach(t => t.style.color = '#bbbbbb');
+            } 
+            else if (mode === 'black') {
+                body.style.backgroundColor = '#000000';
+                body.style.color = '#ffffff';
+                header.style.backgroundColor = '#0a0a0a';
+                hero.style.background = 'linear-gradient(to bottom, #261102, #000000)';
+                roomBox.style.backgroundColor = '#0d0d0d';
+                roomBox.style.borderColor = '#1a1a1a';
+                menu.style.backgroundColor = '#111111';
+                logoText.style.color = '#ffffff';
+                cards.forEach(c => { c.style.backgroundColor = '#0d0d0d'; c.style.borderColor = '#1a1a1a'; });
+                cardTexts.forEach(t => t.style.color = '#999999');
+            } 
+            else if (mode === 'white') {
+                body.style.backgroundColor = '#f4f6f9';
+                body.style.color = '#222222';
+                header.style.backgroundColor = '#ffffff';
+                hero.style.background = 'linear-gradient(to bottom, #ffe8d6, #f4f6f9)';
+                roomBox.style.backgroundColor = '#ffffff';
+                roomBox.style.borderColor = '#e0e0e0';
+                menu.style.backgroundColor = '#ffffff';
+                logoText.style.color = '#222222';
+                cards.forEach(c => { c.style.backgroundColor = '#ffffff'; c.style.borderColor = '#e0e0e0'; });
+                cardTexts.forEach(t => t.style.color = '#555555');
+            }
+            menu.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
